@@ -5,6 +5,7 @@ return {
     {
       "neovim/nvim-lspconfig",
       opts = {
+        autoformat = false,
         servers = {
           -- Your JDTLS configuration goes here
           jdtls = {
@@ -40,6 +41,22 @@ return {
           end,
         },
       },
+    },
+  },
+  keys = {
+    {
+      "<leader>co",
+      function()
+        vim.lsp.buf.code_action({ context = { only = { "source.organizeImports" } }, apply = true })
+      end,
+      desc = "Organize Imports",
+    },
+    {
+      "<leader>cq",
+      function()
+        vim.lsp.buf.code_action({ context = { only = { "quickassist" } }, apply = true })
+      end,
+      desc = "Quick Assist",
     },
   },
 }
