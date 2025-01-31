@@ -50,6 +50,12 @@ return {
     }
   },
   {
+    "ronisbr/nano-theme.nvim",
+    init = function ()
+      vim.o.background = "light" 
+    end
+  },
+  {
     "catppuccin/nvim",
     lazy = true,
     name = "catppuccin",
